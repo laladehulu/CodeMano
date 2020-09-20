@@ -1,0 +1,148 @@
+body{
+    color: black;
+    background-color: white;
+    padding-top: 1px;
+    margin: 0;
+    overflow: hidden;
+    
+}
+body::-webkit-scrollbar{
+
+}
+
+.sidebar:hover~.wrapper{
+    margin-left: 16rem;
+}
+.sidebar{
+    
+    width: 5rem;
+    height: 100vh;
+    padding: 10px 0;
+    position: fixed;
+    z-index: 2;
+    background-color: rgb(128, 128, 128);
+    transition: width 0.2s ease-out;
+}
+
+.sidebar  .nav-link{
+
+    display: flex;
+    align-items: center;
+
+    height: 5rem;
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar:hover{
+    width: 16rem;
+}
+.link-text{
+
+
+}
+.sidebar:hover .link-text{
+    display: block;
+}
+.sidebar .nav-item{
+    width: 100%;
+}
+.sidebar  .nav-link{
+    transition: 1s ease;
+    filter: grayscale(100%) opacity(0.7);
+}
+.sidebar .nav-link:hover{
+    background-color: black;
+    filter: grayscale(0%) opacity(1);
+}
+.sidebar  .nav-link svg{
+        transition: all 1s ease;
+    
+        min-width: 2rem;
+        margin: 0 1.5rem;
+        opacity: 1  ;
+        color: yellow;
+    }
+
+.sidebar .navbar-nav{
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    align-items: center;
+}
+.wrapper{
+    display: flex;
+    transition: margin-left 0.2s ease-out;
+    margin-left: 5em;
+}
+.main{
+    flex-grow: 5;
+    overflow: hidden;
+    padding: 1rem;
+}
+#editor{
+    height:80vh;
+}
+.right{
+   
+    height: 100vh;
+    width: 18rem;
+    flex-grow: 1;
+    padding: 1rem;
+    background-color: #E7E7E7;
+    right: 0;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    
+}
+
+.circle{
+    border-radius: 50%;
+    background-color: red;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 5px;
+    display: inline-block;
+    top: 10px;
+}
+
+.circle-editing{
+    background-color: #f0ad4e;
+}
+.circle-done{
+    background-color: green;
+}
+.question-expand{
+    margin:10px 0;
+    padding: 5px 2px 5px 19px;
+    font-size: 1.2em;
+    max-height: 1.5em;
+    box-sizing: content-box;
+    background-color: #ffffff;
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: all 0.5s ease;
+    overflow: hidden;
+
+}
+.question-content{
+    background-color:#FFFFFF;
+    padding: 5px 5px;
+    min-height: 100px;
+}
+textarea{
+    min-height: 30px;
+    max-height: 50vh;
+    width: 100%;
+}
+.question-active{
+    max-height: 200px;
+
+}

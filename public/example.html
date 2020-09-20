@@ -1,0 +1,192 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<style>
+    body{
+        overflow: hidden;
+        background: rgb(40,140,255);
+background: linear-gradient(180deg, rgba(40,140,255,1) 0%, rgba(7,11,52,1) 0%, rgba(42,46,118,1) 42%, rgba(72,52,117,1) 71%, rgba(133,89,136,1) 100%);
+        position: relative;
+        height: 100vh;
+    }
+    .text{
+        color: rgb(255, 255, 255);
+        transition:all 1s;
+        animation: textIn 1.2s ease forwards;
+    }
+    .input-container{
+        cursor: pointer;
+        display: inline-block;
+        position: absolute;
+        left:50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        
+        border: 3px solid white;
+     
+        padding: 10px;
+    }
+    .input-container:hover{
+        
+    }
+    .planet{
+        position: absolute;
+        width: 75vw;
+        height: 50vw;
+        bottom: -40vw;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+  @keyframes textIn{
+      from{
+          opacity: 0;
+      }
+      to{
+          opacity: 1;
+      }
+  }
+  @keyframes textOut{
+      from{
+          opacity: 1;
+      }
+      to{
+          opacity: 0;
+      }
+  }
+  #editor { 
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+    }
+    #editor-container{
+        position: relative;
+        height: 50vh;
+        width: 80%;
+        margin: auto;
+    }
+</style>
+<template id="template">
+    
+<h1 class="text h3 "  style="position: absolute; left: {{x}}; top:{{y}}; ">{{message}}</h1>
+
+</template>
+<body>
+    <div id="editor-container">
+        <div class="" id="editor">
+            function foo(items) {
+                var x = "All this is syntax highlighted";
+                return x;}
+        </div>
+    </div>
+
+    <div  class="input-container  text-center">
+        <input type="text" >
+        <button>Name</button>
+    </div>
+    <div >
+        
+    </div>
+    <img class ="planet" src="p.png"> 
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.min.js" integrity="sha512-GoORoNnxst42zE3rYPj4bNBm0Q6ZRXKNH2D9nEmNvVF/z24ywVnijAWVi/09iBiVDQVf3UlZHpzhAJIdd9BXqw==" crossorigin="anonymous"></script>
+<script src="mustache.js" ></script>
+<script src="/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+var editor = ace.edit("editor");
+
+    editor.session.setMode("ace/mode/javascript");
+    (function SetUpMessage(){
+        let MessageTemplate = document.querySelector("#template").innerHTML;
+        var body = document.querySelector(".all");
+        var btn = document.querySelector("button")
+        var textBox = document.querySelector("input");
+        var inputContainer = document.querySelector(".input-container");
+        function followMouse(){
+ 
+            var hasListener = false;
+            var interval = null;
+            var offsetX =0;
+            var offsetY = 0;
+            inputContainer.addEventListener("click",(e)=>{
+                offsetX = e.pageX-inputContainer.getBoundingClientRect().x;
+                console.log(offsetX)
+                offsetY = e.pageY-inputContainer.getBoundingClientRect().y;
+
+                if(hasListener){
+                    window.removeEventListener("mousemove",moveFollow);
+                }
+                else{
+                    if(e.target != inputContainer){return}
+                    window.addEventListener("mousemove",moveFollow);
+                }
+                hasListener = !hasListener;
+              
+            })
+            function moveFollow(e){
+  
+                inputContainer.style.transform = "translate(0%,0%)";
+                inputContainer.style.left = (e.pageX-offsetX)+"px";
+                console.log(offsetX)
+                inputContainer.style.top =( e.pageY-offsetY)+"px";
+       
+                 }
+        }
+            followMouse();
+        
+
+
+  
+        console.log(Mustache.render(MessageTemplate,{h:"hello"}));
+        var ws = new WebSocket("ws://"+window.location.hostname
+            +':'+window.location.port
+            );
+        function setButtonOnclickSend(){
+            ws.send(JSON.stringify(
+            {type:"msg",
+            payload:{
+                message: textBox.value,
+                x:inputContainer.getBoundingClientRect().x,
+                y:inputContainer.getBoundingClientRect().y
+                
+            }
+            }));
+            btn.innerHTML="send";
+            textBox.value ="";
+        }
+        ws.onopen= function(){
+            
+            btn.onclick = setButtonOnclickSend;
+            
+        }
+        
+        ws.onmessage = function(e){
+            if(e.data == "name"){
+                var ele = document.createElement("h1");
+                ele.classList.add("text")
+                ele.innerHTML = "Nickname set successfully!"
+                setTimeout(() => {
+                    ele.style.animation = "textOut 2s ease forwards";
+                    setTimeout(() => {
+                        
+                        ele.remove();
+                    }, (2000));
+                
+                }, (2000));
+                
+                btn.after(ele);//put the notification after button
+            }
+            else{
+
+                let serverPacket =JSON.parse(e.data);
+                let msg = document.createElement("div");
+                msg.innerHTML =  Mustache.render(MessageTemplate,serverPacket.payload);
+                console.log(serverPacket);
+                document.querySelector("body").appendChild(msg);
+            }
+     
+        }
+    })()
+</script>

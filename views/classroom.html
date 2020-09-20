@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/classroom.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <a class="navbar-brand" href="#">HexClass</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <nav class="navbar navbar-light bg-info ">
+      <a class="navbar-brand" style="font-size: 1.2rem;" href="#">Learner Client</a>
+    </nav>
+    <nav class="navbar navbar-light ml-auto my-2 my-lg-0 bg-info">
+      <a class="navbar-brand" href="#">Classroom Code: {{code}}</a>
+    </nav>
+  </nav>
+    <div class="sidebar navbar-dark bg-dark">
+        <ul class="navbar-nav">
+           
+      
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  data-prefix="fad"
+                  data-icon="cat"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  class="svg-inline--fa fa-cat fa-w-16 fa-9x"
+                >
+                  <g class="fa-group">
+                    <path
+                      fill="currentColor"
+                      d="M448 96h-64l-64-64v134.4a96 96 0 0 0 192 0V32zm-72 80a16 16 0 1 1 16-16 16 16 0 0 1-16 16zm80 0a16 16 0 1 1 16-16 16 16 0 0 1-16 16zm-165.41 16a204.07 204.07 0 0 0-34.59 2.89V272l-43.15-64.73a183.93 183.93 0 0 0-44.37 26.17L192 304l-60.94-30.47L128 272v-80a96.1 96.1 0 0 0-96-96 32 32 0 0 0 0 64 32 32 0 0 1 32 32v256a64.06 64.06 0 0 0 64 64h176a16 16 0 0 0 16-16v-16a32 32 0 0 0-32-32h-32l128-96v144a16 16 0 0 0 16 16h32a16 16 0 0 0 16-16V289.86a126.78 126.78 0 0 1-32 4.54c-61.81 0-113.52-44.05-125.41-102.4z"
+                      class="fa-secondary"
+                    ></path>
+                    <path
+                      fill="currentColor"
+                      d="M376 144a16 16 0 1 0 16 16 16 16 0 0 0-16-16zm80 0a16 16 0 1 0 16 16 16 16 0 0 0-16-16zM131.06 273.53L192 304l-23.52-70.56a192.06 192.06 0 0 0-37.42 40.09zM256 272v-77.11a198.62 198.62 0 0 0-43.15 12.38z"
+                      class="fa-primary"
+                    ></path>
+                  </g>
+                </svg>
+                <span class="link-text">Live Classroom</span>
+              </a>
+            </li>
+      
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  data-prefix="fad"
+                  data-icon="alien-monster"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 576 512"
+                  class="svg-inline--fa fa-alien-monster fa-w-18 fa-9x"
+                >
+                  <g class="fa-group">
+                    <path
+                      fill="currentColor"
+                      d="M560,128H528a15.99954,15.99954,0,0,0-16,16v80H480V176a15.99954,15.99954,0,0,0-16-16H416V96h48a16.00079,16.00079,0,0,0,16-16V48a15.99954,15.99954,0,0,0-16-16H432a15.99954,15.99954,0,0,0-16,16V64H368a15.99954,15.99954,0,0,0-16,16v48H224V80a15.99954,15.99954,0,0,0-16-16H160V48a15.99954,15.99954,0,0,0-16-16H112A15.99954,15.99954,0,0,0,96,48V80a16.00079,16.00079,0,0,0,16,16h48v64H112a15.99954,15.99954,0,0,0-16,16v48H64V144a15.99954,15.99954,0,0,0-16-16H16A15.99954,15.99954,0,0,0,0,144V272a16.00079,16.00079,0,0,0,16,16H64v80a16.00079,16.00079,0,0,0,16,16h48v80a16.00079,16.00079,0,0,0,16,16h96a16.00079,16.00079,0,0,0,16-16V432a15.99954,15.99954,0,0,0-16-16H192V384H384v32H336a15.99954,15.99954,0,0,0-16,16v32a16.00079,16.00079,0,0,0,16,16h96a16.00079,16.00079,0,0,0,16-16V384h48a16.00079,16.00079,0,0,0,16-16V288h48a16.00079,16.00079,0,0,0,16-16V144A15.99954,15.99954,0,0,0,560,128ZM224,320H160V224h64Zm192,0H352V224h64Z"
+                      class="fa-secondary"
+                    ></path>
+                    <path
+                      fill="currentColor"
+                      d="M160,320h64V224H160Zm192-96v96h64V224Z"
+                      class="fa-primary"
+                    ></path>
+                  </g>
+                </svg>
+                <span class="link-text">Assignments</span>
+              </a>
+            </li>
+
+          </ul>
+    </div>
+    
+  
+    <div class="wrapper">
+      <div class="main" >
+        <h1 class="lead">Live Classroom</h1>
+        <p class="editor" style="" id="editor">console.log("hello world!") 
+//edit your code here</p>
+    </div>
+      <section class="right">
+        <h3 class="lead"> Questions</h3>
+        
+        </section>
+    </div>
+    
+    <script>
+      const name = "{{name}}";
+      var expandQ = function(questionBar){
+        
+        questionBar.classList.toggle("question-active")
+      }
+    </script>
+    <script> const ClassCode = "{{code}}";</script>
+    <script src="/mustache.js"></script>
+    <script src="/ace-builds/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/assets/javascript/classroom.js" type="text/javascript" charset="utf-8"></script>
+     <!-- jQuery CDN - Slim version (=without AJAX) -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+     <!-- Popper.JS -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+     <!-- Bootstrap JS -->
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+</body>
+</html>
