@@ -1,1 +1,175 @@
-var _0x1e38=['urlencoded','attempting\x20to\x20create\x20from\x20ID','teacher','send','charAt','toString','emit','events','express','push','removeListener','is\x20not\x20defined','coderoom\x20not\x20open','Server','forEach','listening','floor','./routers','mongodb://localhost/student','terminate','trim','connection','get','/teacher/','random','mongoose','process','openStdin','use','.mst','set',',\x20this\x20code\x20room\x20already\x20exist','connect','close','data','teacherSokcet','coderoom','view\x20cache','codechange','not\x20teacher','child_process','log','isTeacher','length','view\x20engine','spawn','eventEmitter','static','/host','listen','OPEN','classroomID','body-parser','public','you\x20entered:\x20[','redirect','json','broadcast','mustache-express','engine','ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789','changes','path'];(function(_0x3af4ad,_0x1e383a){var _0x3a2431=function(_0x3538c0){while(--_0x3538c0){_0x3af4ad['push'](_0x3af4ad['shift']());}};_0x3a2431(++_0x1e383a);}(_0x1e38,0x18b));var _0x3a24=function(_0x3af4ad,_0x1e383a){_0x3af4ad=_0x3af4ad-0x0;var _0x3a2431=_0x1e38[_0x3af4ad];return _0x3a2431;};var _0x880627=_0x3a24;const express=require('express'),routers=require(_0x880627('0x0')),ws=require('ws'),spawn=require('child_process')[_0x880627('0x1c')],{fork:fork}=require(_0x880627('0x17'));var eventEmitter=require(_0x880627('0x35'))['EventEmitter'],path=require(_0x880627('0x2d'));const {emit:emit}=require(_0x880627('0x9')),mongoose=require(_0x880627('0x8')),mustache=require(_0x880627('0x29')),e=require(_0x880627('0x36')),bodyParser=require(_0x880627('0x23'));var app=express();app[_0x880627('0xb')](bodyParser[_0x880627('0x2e')]({'extended':!0x0})),app[_0x880627('0xb')](bodyParser[_0x880627('0x27')]()),app[_0x880627('0xb')](routers),app[_0x880627('0xb')](express[_0x880627('0x1e')](_0x880627('0x24'))),app[_0x880627('0x2a')]('html',mustache(__dirname+'/partials',_0x880627('0xc'))),app[_0x880627('0xd')](_0x880627('0x1b'),'html'),app['disable'](_0x880627('0x14')),mongoose[_0x880627('0xf')](_0x880627('0x1'),{'useUnifiedTopology':!0x0,'useNewUrlParser':!0x0,'useCreateIndex':!0x0});var server=app[_0x880627('0x20')](0x50,function(_0x3538c0){var _0x36f616=_0x880627;if(_0x3538c0)return console['log'](_0x3538c0);console[_0x36f616('0x18')](_0x36f616('0x3d'));});function makeid(_0xfa1979){var _0x47c593=_0x880627;for(var _0x1985ea='',_0x1535be=_0x47c593('0x2b'),_0x3a6c03=_0x1535be[_0x47c593('0x1a')],_0x4f9e02=0x0;_0x4f9e02<_0xfa1979;_0x4f9e02++)_0x1985ea+=_0x1535be[_0x47c593('0x32')](Math[_0x47c593('0x3e')](Math[_0x47c593('0x7')]()*_0x3a6c03));return _0x1985ea;}app[_0x880627('0x5')](_0x880627('0x1f'),function(_0x1af208,_0x11ddf4){var _0xd913b1=_0x880627;for(var _0x2b3123=makeid(0x6);allRooms[_0x2b3123];)_0x2b3123=makeid(0x6);_0x11ddf4[_0xd913b1('0x26')](_0xd913b1('0x6')+_0x2b3123);});var stdin=process[_0x880627('0xa')]();function test(_0x4605e0){var _0x5d7453=_0x880627;messageEvent[_0x5d7453('0x34')](_0x5d7453('0x28'),_0x4605e0);}stdin['addListener'](_0x880627('0x11'),function(_0x5141ac){var _0x50a06e=_0x880627;console[_0x50a06e('0x18')](_0x50a06e('0x25')+_0x5141ac[_0x50a06e('0x33')]()['trim']()+']'),eval(_0x5141ac[_0x50a06e('0x33')]()[_0x50a06e('0x3')]());});var clients=[],i=0x0,getName=function(_0x1ca7da){return _0x1ca7da+'\x20:\x20\x20';},allRooms={},roomChanges={},wsServer=new ws[(_0x880627('0x3b'))]({'server':server});wsServer['on'](_0x880627('0x4'),function(_0x2ac092){function _0x14e486(_0x1f1645){var _0x20a0a9=_0x3a24;_0x2ac092[_0x20a0a9('0x21')]&&(console[_0x20a0a9('0x18')](_0x1f1645),_0x2ac092[_0x20a0a9('0x31')](_0x1f1645));}function _0xc40dae(){var _0x4d2908=_0x3a24;_0x2ac092['OPEN']&&(console[_0x4d2908('0x18')]('closed\x20event\x20listener\x20call,client\x20closing\x20at\x20room\x20id:\x20'+_0x2ac092[_0x4d2908('0x22')]),_0x2ac092['send'](_0x4d2908('0x10')),_0x2ac092[_0x4d2908('0x2')]());}var _0x43a6d5=[function(_0x4e0eaa){var _0x5cbfeb=_0x3a24;console[_0x5cbfeb('0x18')](typeof _0x2ac092['isTeacher']),_0x2ac092[_0x5cbfeb('0x19')]=_0x5cbfeb('0x30')==_0x4e0eaa;},function(_0x452a2c){var _0x3b3270=_0x3a24;_0x2ac092[_0x3b3270('0x22')]=_0x452a2c,_0x2ac092[_0x3b3270('0x19')]?function(_0x1fd137){var _0x6dd1b9=_0x3b3270;if(console[_0x6dd1b9('0x18')](_0x1fd137),allRooms[_0x1fd137])throw _0x6dd1b9('0x2f')+_0x1fd137+_0x6dd1b9('0xe');allRooms[_0x1fd137]={},allRooms[_0x1fd137][_0x6dd1b9('0x2c')]=[],allRooms[_0x1fd137]['eventEmitter']=new eventEmitter(),allRooms[_0x1fd137][_0x6dd1b9('0x12')]=_0x2ac092;}(_0x452a2c):function(_0x30ba5f){var _0x2d4ab6=_0x3b3270;if(!allRooms[_0x30ba5f])return console[_0x2d4ab6('0x18')](_0x2d4ab6('0x3a')),_0x2ac092['terminate']();allRooms[_0x30ba5f][_0x2d4ab6('0x1d')]['on'](_0x2d4ab6('0x15'),_0x14e486),allRooms[_0x30ba5f][_0x2d4ab6('0x1d')]['on'](_0x2d4ab6('0x10'),_0xc40dae);}(_0x452a2c);},function(){var _0x3dd401=_0x3a24;if(!allRooms[_0x2ac092['classroomID']])return console[_0x3dd401('0x18')](_0x3dd401('0x13')+_0x2ac092[_0x3dd401('0x22')]+_0x3dd401('0x39')),_0x2ac092[_0x3dd401('0x2')]();_0x2ac092['isTeacher']||(console['log'](_0x3dd401('0x16')),allRooms[_0x2ac092[_0x3dd401('0x22')]]['changes'][_0x3dd401('0x3c')](_0x6078b=>{var _0x3ffd58=_0x3dd401;_0x2ac092[_0x3ffd58('0x31')](_0x6078b),console[_0x3ffd58('0x18')](_0x3ffd58('0x31'),_0x6078b);}));}],_0x420084=0x0;_0x2ac092['on']('message',function(_0x2e5d70){var _0x45d5a8=_0x3a24,_0x584b72;_0x420084<_0x43a6d5['length']?(_0x43a6d5[_0x420084](_0x2e5d70),_0x420084++):_0x2ac092['isTeacher']?(!function(_0x3a20bf){var _0x3d6f2d=_0x3a24;allRooms[_0x2ac092[_0x3d6f2d('0x22')]][_0x3d6f2d('0x1d')][_0x3d6f2d('0x34')](_0x3d6f2d('0x15'),_0x3a20bf);}(_0x2e5d70),_0x584b72=_0x2e5d70,allRooms[_0x2ac092[_0x45d5a8('0x22')]][_0x45d5a8('0x2c')][_0x45d5a8('0x37')](_0x584b72)):(console[_0x45d5a8('0x18')](_0x2e5d70),allRooms[_0x2ac092[_0x45d5a8('0x22')]][_0x45d5a8('0x12')][_0x45d5a8('0x31')](_0x2e5d70));}),_0x2ac092['on']('close',function(){var _0x54f200=_0x3a24;void 0x0!==_0x2ac092[_0x54f200('0x19')]&&(_0x2ac092['isTeacher']?(allRooms[_0x2ac092[_0x54f200('0x22')]][_0x54f200('0x1d')]['emit'](_0x54f200('0x10')),delete allRooms[_0x2ac092[_0x54f200('0x22')]]):allRooms[_0x2ac092[_0x54f200('0x22')]]&&(allRooms[_0x2ac092['classroomID']][_0x54f200('0x1d')][_0x54f200('0x38')](_0x54f200('0x15'),_0x14e486),allRooms[_0x2ac092[_0x54f200('0x22')]][_0x54f200('0x1d')][_0x54f200('0x38')]('close',_0xc40dae)));});});
+const express = require("express");
+const routers = require("./routers")
+const ws = require("ws");
+const spawn = require("child_process").spawn;
+const {fork} = require("child_process");
+var eventEmitter = require("events").EventEmitter;
+var path = require('path');
+const { emit } = require("process");
+const mongoose = require("mongoose");
+const mustache = require("mustache-express");
+const e = require("express");
+const bodyParser = require("body-parser");
+var app = express();
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
+app.use(routers);
+app.use(express.static("public"));
+
+app.engine('html', mustache(__dirname + '/partials', '.mst'));
+app.set('view engine', 'html');
+app.disable('view cache');
+mongoose.connect("mongodb://localhost/student",{  useUnifiedTopology: true ,useNewUrlParser: true, useCreateIndex: true })
+var server = app.listen(80,function(err){
+
+  
+  if(err){
+    return console.log(err)
+    }
+  console.log("listening");
+})
+function makeid(length) {
+  var result           = '';
+  var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  var charactersLength = characters.length;
+  for ( var i = 0; i < length; i++ ) {
+     result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
+app.get("/host",function(req,res){
+  var id = makeid(6);
+  while(allRooms[id]){
+    id = makeid(6);
+  }
+  res.redirect('/teacher/'+id);
+})
+var stdin = process.openStdin();
+
+stdin.addListener("data", function(d) {
+    // note:  d is an object, and when converted to a string it will
+    // end with a linefeed.  so we (rather crudely) account for that  
+    // with toString() and then trim() 
+    console.log("you entered: [" + 
+        d.toString().trim() + "]");
+    eval(d.toString().trim());
+  });
+//[]
+
+function test(msg){
+  messageEvent.emit("broadcast",msg);
+}
+var clients = [];
+var i = 0;
+var getName = function(name){
+  
+  return name+ " :  ";
+}
+var allRooms = {};
+var roomChanges = {};
+var wsServer = new ws.Server({server:server});
+wsServer.on('connection', function connection(ws) {
+  function listener(msg){
+    if(ws.OPEN){
+      console.log(msg);
+      ws.send(msg)
+    }
+  }
+  function close(){
+    if(ws.OPEN){
+      console.log("closed event listener call,client closing at room id: " + ws.classroomID);
+      ws.send("close");
+      ws.terminate();
+    }
+  }
+  function addToSavedChange(change){
+    allRooms[ws.classroomID].changes.push(change);
+  }
+  function initializationFunctions(){
+      function initializeRole(message){
+        console.log(typeof ws.isTeacher);
+        ws.isTeacher = message == "teacher"? true:false;
+      }
+      function initializeCoderoomCode(message){
+        ws.classroomID = message;
+        if(ws.isTeacher){
+          handleCreateCoderoom(message);
+        }else{
+          handleJoinCoderoom(message)
+        }
+    
+      }
+      function applyAllPreviousChange(){
+        
+        if(!allRooms[ws.classroomID]){console.log("coderoom" + ws.classroomID +"is not defined");return ws.terminate();}
+        if(!ws.isTeacher){
+          console.log("not teacher");
+          allRooms[ws.classroomID].changes.forEach(change => {
+            ws.send(change);
+            console.log("send",change);
+          });
+        }
+      }
+      return [initializeRole,initializeCoderoomCode,applyAllPreviousChange];
+  }
+
+  var initializationSequence = initializationFunctions();
+  var step = 0;
+  ws.on('message', function incoming(message) {
+    //console.log("message:" +message);
+    if(step< initializationSequence.length){
+      initializationSequence[step](message);
+      step++;
+    }
+    else{
+      if(ws.isTeacher){
+        codeChange(message);
+        addToSavedChange(message);
+      }
+      else{
+        console.log(message);
+        allRooms[ws.classroomID].teacherSokcet.send(message);
+      }
+    }
+  });
+
+
+
+  function codeChange(message){
+    allRooms[ws.classroomID].eventEmitter.emit("codechange",message);
+  }
+  function handleCreateCoderoom(message){
+    console.log(message);
+    if(allRooms[message]){console.log( "attempting to create from ID" + message+", this code room already exist"); ws.send("e");}
+else{
+      allRooms[message] = {};
+      allRooms[message].changes = [];
+      allRooms[message].eventEmitter = new eventEmitter();
+      allRooms[message].teacherSokcet = ws;
+    }
+  }
+  function handleJoinCoderoom(message){
+   // console.log(allRooms);
+    if(!allRooms[message]){ console.log( "coderoom not open"); return ws.terminate()}
+    else{
+      allRooms[message].eventEmitter.on("codechange",listener);
+      allRooms[message].eventEmitter.on("close",close)
+    }
+    //console.log(allRooms);
+  }
+  ws.on("close", function(){
+    if(ws.isTeacher === undefined){return};
+    if(ws.isTeacher){allRooms[ws.classroomID].eventEmitter.emit("close"); delete allRooms[ws.classroomID];}
+    else{
+      if(allRooms[ws.classroomID]){
+
+      
+      allRooms[ws.classroomID].eventEmitter.removeListener("codechange",listener)//remove it from chat room
+      allRooms[ws.classroomID].eventEmitter.removeListener("close",close)//remove it from chat room}
+      }
+    }
+
+  })
+  
+
+});
