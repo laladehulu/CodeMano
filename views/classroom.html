@@ -26,7 +26,7 @@
            
       
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="#classroom" class="nav-link">
                 <svg
                   aria-hidden="true"
                   focusable="false"
@@ -55,7 +55,7 @@
             </li>
       
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="#assignment" class="nav-link">
                 <svg
                   aria-hidden="true"
                   focusable="false"
@@ -87,7 +87,7 @@
     </div>
     
   
-    <div class="wrapper">
+    <div class="wrapper page" data-page="classroom">
       <div class="main" >
         <h1 class="lead">Live Classroom</h1>
         <p class="editor" style="" id="editor">console.log("hello world!") 
@@ -98,7 +98,11 @@
         
         </section>
     </div>
-    
+    <div class="page" data-page="assignment">
+      <div>
+        
+      </div>
+    </div>
     <script>
       const name = "{{name}}";
       var expandQ = function(questionBar){
@@ -110,6 +114,7 @@
     <script src="/mustache.js"></script>
     <script src="/ace-builds/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
     <script src="/assets/javascript/classroom.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/assets/javascript/pageManager.js" type="text/javascript" charset="utf-8"></script>
      <!-- jQuery CDN - Slim version (=without AJAX) -->
      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
      <!-- Popper.JS -->

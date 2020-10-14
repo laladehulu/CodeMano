@@ -120,7 +120,7 @@ wsServer.on('connection', function connection(ws) {
     if(step< initializationSequence.length){
       initializationSequence[step](message);
       step++;
-    }
+    }//the first few messages are used for sequencing
     else{
       if(ws.isTeacher){
         codeChange(message);
@@ -128,7 +128,7 @@ wsServer.on('connection', function connection(ws) {
       }
       else{
         console.log(message);
-        allRooms[ws.classroomID].teacherSokcet.send(message);
+        allRooms[ws.classroomID].teacherSokcet.send(message);//it is a student message, therefore send it to the teacher
       }
     }
   });
@@ -150,7 +150,7 @@ else{
   }
   function handleJoinCoderoom(message){
    // console.log(allRooms);
-    if(!allRooms[message]){ console.log( "coderoom not open"); return ws.terminate()}
+    if(!allRooms[message]){ console.log( "coderoom not open"); ws.send("not open");return ws.terminate()}
     else{
       allRooms[message].eventEmitter.on("codechange",listener);
       allRooms[message].eventEmitter.on("close",close)

@@ -131,7 +131,7 @@ function reformatData(change){
     return change.action == "insert"?formatInsert(change): formatRemove(change);
 }
 
-var ws = new WebSocket("ws://"+window.location.hostname
+var ws = new WebSocket("wss://"+window.location.hostname
             +':'+window.location.port
             );
             function sendNewQuestion(questionText){

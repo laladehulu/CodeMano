@@ -42,6 +42,14 @@ function createElementFromHTML(htmlString) {
     // Change this to div.childNodes to support multiple top-level nodes
     return div.firstChild; 
   }
+function addCard(cards,container){
+    const template = `<div class="card"></div>`
+    cards.forEach(card =>{
+        let cardEle =createElementFromHTML(template);
+        cardEle.querySelector(".card").innerHTML = cards;
+        container.appendChild(cardEle);
+    })
+}
 const QuestionManager = (function(){
     var RightSection = document.querySelector(".right");
     var allQuestions = [];//made up of nodes
@@ -173,7 +181,7 @@ code.on("change", (e)=>{
     console.log(e);
 })
 
-var ws = new WebSocket("ws://"+window.location.hostname
+var ws = new WebSocket("wss://"+window.location.hostname
             +':'+window.location.port
             );
 var sendAnswer = function(index,answerText){
@@ -189,6 +197,7 @@ ws.onopen= function(){
 }
 ws.onerror = function(e){
     console.log(e);
+    alert("websocket connection error");
 }
 
 ws.onmessage = function(e){
@@ -196,5 +205,14 @@ ws.onmessage = function(e){
     let data = e.data
     var pos, text;
     console.log(data);
-    handlers[data.charAt(0)](data.slice(1));//use the first letter to distinguish message type, and pass the rest of the string to the handler function
+    if(data == "close"){
+        alert("the teacher has left the classroom");
+    }
+    if(data == "not open"){
+        alert("code room not open");
+    }
+    else{
+        handlers[data.charAt(0)](data.slice(1));//use the first letter to distinguish message type, and pass the rest of the string to the handler function
+    }
+   
 }
