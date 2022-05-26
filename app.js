@@ -20,6 +20,10 @@ app.engine('html', mustache(__dirname + '/partials', '.mst'));
 app.set('view engine', 'html');
 app.disable('view cache');
 mongoose.connect("mongodb://localhost/student",{  useUnifiedTopology: true ,useNewUrlParser: true, useCreateIndex: true })
+const fs = require('fs');
+
+
+
 var server = app.listen(80,function(err){
 
   
@@ -125,6 +129,11 @@ wsServer.on('connection', function connection(ws) {
       if(ws.isTeacher){
         codeChange(message);
         addToSavedChange(message);
+        fs.appendFile('/version_history.txt', message, err => {
+            if (err) {
+              console.error(err);
+            }
+        });
       }
       else{
         console.log(message);
